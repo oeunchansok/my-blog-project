@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-3xl mx-auto px-6 py-16 bg-white rounded-lg shadow-md ">
+  <section class="max-w-3xl mx-auto px-6 py-16 bg-white rounded-lg shadow-md pt-20">
     <h1 class="text-4xl font-bold mb-6 text-center text-blue-700">Contact Me</h1>
 
     <p class="text-center text-gray-700 mb-10">
@@ -65,7 +65,7 @@
       <h2 class="text-2xl font-bold mb-4 text-gray-800">Or connect with me on</h2>
       <div class="flex justify-center space-x-6 text-blue-600 text-3xl">
         <a
-          href="https://github.com/your-github"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
@@ -84,7 +84,7 @@
           </svg>
         </a>
         <a
-          href="https://twitter.com/your-twitter"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Twitter"

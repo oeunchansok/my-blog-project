@@ -1,10 +1,10 @@
 <template>
-  <section class="bg-gradient-to-b from-blue-50 to-white py-16">
+  <section class="bg-gradient-to-b from-blue-50 to-white py-16 pt-20">
     <div class="container mx-auto px-6 max-w-6xl space-y-14">
 
       <!-- Header -->
       <div class="text-center">
-        <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-3">About Me</h2>
+        <h1 class="text-4xl font-bold mb-8 text-center text-blue-700">About Me</h1>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
           Get to know me better — my habits, what I love, and how I spend my free time.
         </p>
@@ -30,7 +30,7 @@
 
       <!-- My Habits -->
       <div class="bg-white rounded-2xl shadow-lg p-8">
-        <h3 class="text-2xl font-semibold text-gray-800 mb-4">My Habits</h3>
+        <h3 class="text-2xl font-semibold text-blue-600 mb-4">My Habits</h3>
         <ul class="list-disc list-inside text-gray-700 space-y-2 text-lg">
           <li>Write in my journal every morning and night 📝</li>
           <li>Take quiet evening walks 🌙</li>
@@ -40,18 +40,19 @@
 
       <!-- Free Time -->
       <div class="bg-white rounded-2xl shadow-lg p-8">
-        <h3 class="text-2xl font-semibold text-gray-800 mb-4">What I Do in My Free Time</h3>
+        <h3 class="text-2xl font-semibold text-blue-600 mb-4">What I Do in My Free Time</h3>
         <ul class="list-disc list-inside text-gray-700 space-y-2 text-lg">
-          <li>Write blog posts about coding and life</li>
+          <li>Write blog posts about coding and life 🧑‍💻</li>
           <li>Explore and take photos of nature and sunsets 🌅</li>
-          <li>Listen to calming instrumental music 🎶</li>
-          <li>Watch inspiring movies or anime</li>
+          <li>Listen to calming instrumental music 🎵🎶</li>
+          <li>Watch inspiring movies or anime 📽️</li>
+          <li>Draw the pictue ✏️ </li>
         </ul>
       </div>
 
       <!-- Likes -->
       <div class="bg-white rounded-2xl shadow-lg p-8">
-        <h3 class="text-2xl font-semibold text-gray-800 mb-4">What I Like</h3>
+        <h3 class="text-2xl font-semibold text-blue-600 mb-4">What I Like</h3>
         <p class="text-lg text-gray-700 leading-relaxed">
           I love the color <span class="font-bold text-blue-500">blue</span>, quiet nights under the stars 🌌, full moons 🌕, and peaceful places that help me think and create.
         </p>
@@ -59,7 +60,7 @@
 
       <!-- Picture Gallery -->
       <div class="bg-white rounded-2xl shadow-lg p-8">
-        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Some Moments I Love</h3>
+        <h3 class="text-2xl font-semibold text-blue-600 mb-6">Some Moments I Love</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <img
             src="https://imgs.search.brave.com/C6eWMXY3QclLfV2TSJTB588usWmIHSMrse8kbP1uXKc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzE0MjExOTg4L3Iv/aWwvNjM3NmQ1LzE5/MDQzMTI2NTYvaWxf/NjAweDYwMC4xOTA0/MzEyNjU2X3JuYnEu/anBn"

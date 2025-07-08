@@ -3,20 +3,53 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
         <!-- Logo -->
-         <NuxtLink to="/">
-           <div class="flex-shrink-0 text-xl font-bold text-blue-600">
-             AkemiSite
-           </div>
-
-         </NuxtLink>
+        <NuxtLink to="/">
+          <div class="flex-shrink-0 text-xl font-bold text-blue-600">
+            AkemiSite
+          </div>
+        </NuxtLink>
 
         <!-- Desktop Menu -->
         <nav class="hidden md:flex space-x-6">
-          <NuxtLink to="/" class="text-gray-700 hover:text-blue-600">Home</NuxtLink>
-          <NuxtLink to="/about" class="text-gray-700 hover:text-blue-600">About Me</NuxtLink>
-          <NuxtLink to="/projects" class="text-gray-700 hover:text-blue-600">Projects</NuxtLink>
-          <NuxtLink to="/gallery" class="text-gray-700 hover:text-blue-600">Gallery</NuxtLink>
-          <NuxtLink to="/contact" class="text-gray-700 hover:text-blue-600">Contact</NuxtLink>
+          <NuxtLink
+            to="/"
+            :class="[
+              'hover:text-blue-600',
+              route.path === '/' ? 'text-blue-600 font-semibold' : 'text-gray-700'
+            ]"
+          >Home</NuxtLink>
+
+          <NuxtLink
+            to="/about"
+            :class="[
+              'hover:text-blue-600',
+              route.path === '/about' ? 'text-blue-600 font-semibold' : 'text-gray-700'
+            ]"
+          >About Me</NuxtLink>
+
+          <NuxtLink
+            to="/projects"
+            :class="[
+              'hover:text-blue-600',
+              route.path === '/projects' ? 'text-blue-600 font-semibold' : 'text-gray-700'
+            ]"
+          >Projects</NuxtLink>
+
+          <NuxtLink
+            to="/gallery"
+            :class="[
+              'hover:text-blue-600',
+              route.path === '/gallery' ? 'text-blue-600 font-semibold' : 'text-gray-700'
+            ]"
+          >Gallery</NuxtLink>
+
+          <NuxtLink
+            to="/contact"
+            :class="[
+              'hover:text-blue-600',
+              route.path === '/contact' ? 'text-blue-600 font-semibold' : 'text-gray-700'
+            ]"
+          >Contact</NuxtLink>
         </nav>
 
         <!-- Mobile Hamburger -->
@@ -40,11 +73,45 @@
     <!-- Mobile Menu -->
     <div v-if="menuOpen" class="md:hidden bg-white border-t">
       <div class="px-4 py-3 space-y-2">
-        <NuxtLink to="/" class="block text-gray-700 hover:text-blue-600">Home</NuxtLink>
-        <NuxtLink to="/about" class="block text-gray-700 hover:text-blue-600">About Me</NuxtLink>
-        <NuxtLink to="/projects" class="block text-gray-700 hover:text-blue-600">Projects</NuxtLink>
-        <NuxtLink to="/gallery" class="block text-gray-700 hover:text-blue-600">Gallery</NuxtLink>
-        <NuxtLink to="/contact" class="block text-gray-700 hover:text-blue-600">Contact</NuxtLink>
+        <NuxtLink
+          to="/"
+          :class="[
+            'block hover:text-blue-600',
+            route.path === '/' ? 'text-blue-600 font-semibold' : 'text-gray-700'
+          ]"
+        >Home</NuxtLink>
+
+        <NuxtLink
+          to="/about"
+          :class="[
+            'block hover:text-blue-600',
+            route.path === '/about' ? 'text-blue-600 font-semibold' : 'text-gray-700'
+          ]"
+        >About Me</NuxtLink>
+
+        <NuxtLink
+          to="/projects"
+          :class="[
+            'block hover:text-blue-600',
+            route.path === '/projects' ? 'text-blue-600 font-semibold' : 'text-gray-700'
+          ]"
+        >Projects</NuxtLink>
+
+        <NuxtLink
+          to="/gallery"
+          :class="[
+            'block hover:text-blue-600',
+            route.path === '/gallery' ? 'text-blue-600 font-semibold' : 'text-gray-700'
+          ]"
+        >Gallery</NuxtLink>
+
+        <NuxtLink
+          to="/contact"
+          :class="[
+            'block hover:text-blue-600',
+            route.path === '/contact' ? 'text-blue-600 font-semibold' : 'text-gray-700'
+          ]"
+        >Contact</NuxtLink>
       </div>
     </div>
   </header>
@@ -52,6 +119,8 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRoute } from 'vue-router'
 
 const menuOpen = ref(false)
+const route = useRoute()
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-7xl mx-auto px-6 py-16">
+  <section class="max-w-7xl mx-auto px-6 py-16 pt-20">
     <h1 class="text-4xl font-bold mb-8 text-center text-blue-700">Projects</h1>
     <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
       Here are some of my favorite projects, showcasing my skills and creativity.
