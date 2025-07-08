@@ -2,21 +2,21 @@
   <div class="bg-gray-50 text-gray-800 pt-10">
 
     <!-- Hero /  Banner -->
-<section
-  class="text-white py-20 text-center bg-cover bg-center"
-  style="background-image: url('https://imgs.search.brave.com/vUD6m5vvvA5HHXpF9r6wRiI4qDttL-68F-yvbHL6xo4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAyLzEzLzU5LzQw/LzM2MF9GXzIxMzU5/NDAyNV9nQXp2QUtS/dUIydVlyZkJjODhI/aHdTWkJiMU00ZVdX/QS5qcGc');"
->
-  <div class="container mx-auto px-6 bg-black bg-opacity-50 p-6 rounded-lg">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Akemi’s Personal Website</h1>
-    <p class="text-lg md:text-xl mb-6">Sharing my journey in web development, creativity, and life 🚀</p>
-    <NuxtLink
-      to="/projects"
-      class="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-blue-100 transition"
+    <section
+      class="text-white py-20 text-center bg-cover bg-center"
+      style="background-image: url('https://imgs.search.brave.com/KXxwwz7U3lW-JkGkaSHhZ9BqWCUepvpM1lYQpXvj3K8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA0LzcyLzE5LzM5/LzM2MF9GXzQ3MjE5/Mzk1NV9jbHF5SkZB/b0JSMWFKZXJwTUQ5/NmNlODRqaENjWFps/dS5qcGc');"
     >
-      See My Projects
-    </NuxtLink>
-  </div>
-</section>
+      <div class="container mx-auto px-6  bg-opacity-50 p-6 rounded-lg">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Akemi’s Personal Website</h1>
+        <p class="text-lg md:text-xl mb-6">Sharing my journey in web development, creativity, and life 🚀</p>
+        <NuxtLink
+          to="/projects"
+          class="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-blue-100 transition"
+        >
+          See My Projects
+        </NuxtLink>
+      </div>
+    </section>
 
 
     <!-- About Me (short) -->
@@ -112,7 +112,7 @@
     <!-- Contact CTA -->
     <section 
     style="background: linear-gradient(135deg, #005cf1, #06fa58e6);"
-    class="py-16  text-white text-center">
+    class="py-16  text-white text-center bg-blue-50">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold mb-4">Let’s Connect</h2>
         <p class="text-lg mb-6">Have a question or want to work together? Feel free to reach out!</p>
