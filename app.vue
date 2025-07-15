@@ -18,6 +18,14 @@ useHead({
         gtag('config', 'G-91LV7TYNYN');
       `
     }
+  ],
+  title: "Welcome Akime's Blog 🧑‍💻",   
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/log.png'  
+    }
   ]
 })
 </script>

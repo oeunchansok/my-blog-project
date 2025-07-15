@@ -5,7 +5,7 @@
         <!-- Logo -->
         <NuxtLink to="/">
           <div class="flex-shrink-0 text-xl font-bold text-blue-600">
-            AkemiSite
+            AkemiSite 🧑‍💻
           </div>
         </NuxtLink>
 
@@ -75,6 +75,7 @@
       <div class="px-4 py-3 space-y-2">
         <NuxtLink
           to="/"
+          @click="menuOpen = false"
           :class="[
             'block hover:text-blue-600',
             route.path === '/' ? 'text-blue-600 font-semibold' : 'text-gray-700'
@@ -83,6 +84,7 @@
 
         <NuxtLink
           to="/about"
+          @click="menuOpen = false"
           :class="[
             'block hover:text-blue-600',
             route.path === '/about' ? 'text-blue-600 font-semibold' : 'text-gray-700'
@@ -91,6 +93,7 @@
 
         <NuxtLink
           to="/projects"
+          @click="menuOpen = false"
           :class="[
             'block hover:text-blue-600',
             route.path === '/projects' ? 'text-blue-600 font-semibold' : 'text-gray-700'
@@ -99,6 +102,7 @@
 
         <NuxtLink
           to="/gallery"
+          @click="menuOpen = false"
           :class="[
             'block hover:text-blue-600',
             route.path === '/gallery' ? 'text-blue-600 font-semibold' : 'text-gray-700'
@@ -107,6 +111,7 @@
 
         <NuxtLink
           to="/contact"
+          @click="menuOpen = false"
           :class="[
             'block hover:text-blue-600',
             route.path === '/contact' ? 'text-blue-600 font-semibold' : 'text-gray-700'

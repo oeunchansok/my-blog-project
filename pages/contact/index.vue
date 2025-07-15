@@ -1,88 +1,12 @@
 <template>
   <section class="max-w-3xl mx-auto px-6 py-16 bg-white rounded-lg shadow-md pt-20">
-    <h1 class="text-4xl font-bold mb-6 text-center text-blue-700">Contact Me</h1>
 
-    <p class="text-center text-gray-700 mb-10">
-      Whether you have questions, want to collaborate, or just want to say hello, feel free to reach out!
-    </p>
-
-    <!-- Contact Form -->
-    <form @submit.prevent="submitForm" class="space-y-6">
-      <div>
-        <label for="name" class="block mb-2 font-semibold text-gray-800">Name</label>
-        <input
-          type="text"
-          id="name"
-          v-model="form.name"
-          placeholder="Your full name"
-          required
-          class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-      </div>
-
-      <div>
-        <label for="email" class="block mb-2 font-semibold text-gray-800">Email</label>
-        <input
-          type="email"
-          id="email"
-          v-model="form.email"
-          placeholder="your.email@example.com"
-          required
-          class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-      </div>
-
-      <div>
-        <label for="message" class="block mb-2 font-semibold text-gray-800">Message</label>
-        <textarea
-          id="message"
-          v-model="form.message"
-          placeholder="Write your message here..."
-          required
-          rows="5"
-          class="w-full border border-gray-300 rounded-md px-4 py-3 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
-        ></textarea>
-      </div>
-
-      <button
-        type="submit"
-        class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-700 transition"
-      >
-        Send Message
-      </button>
-    </form>
-
-    <!-- Confirmation Message -->
-    <p
-      v-if="submitted"
-      class="mt-6 text-center text-green-600 font-semibold"
-    >
-      Thanks for reaching out! I will get back to you soon.
-    </p>
 
     <!-- Social Links -->
     <div class="mt-16 text-center border-t pt-10">
       <h2 class="text-2xl font-bold mb-4 text-gray-800">Or connect with me on</h2>
       <div class="flex justify-center space-x-6 text-blue-600 text-3xl">
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub"
-          class="hover:text-blue-800 transition"
-        >
-          <svg
-            class="w-8 h-8"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.865 8.167 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.603-3.369-1.342-3.369-1.342-.455-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.34-2.22-.253-4.555-1.11-4.555-4.943 0-1.09.39-1.98 1.029-2.678-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.845c.85.004 1.705.115 2.504.338 1.909-1.296 2.747-1.026 2.747-1.026.546 1.378.203 2.397.1 2.65.64.698 1.028 1.588 1.028 2.678 0 3.842-2.337 4.687-4.565 4.935.36.31.68.923.68 1.86 0 1.342-.012 2.423-.012 2.754 0 .268.18.58.688.481A10.014 10.014 0 0022 12c0-5.52-4.48-10-10-10z"
-            />
-          </svg>
-        </a>
+
         <a
           href="#"
           target="_blank"
@@ -100,6 +24,35 @@
             />
           </svg>
         </a>
+           <a href="#" target="_blank" aria-label="TikTok" class="hover:text-blue-800 transition">
+      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12.75 2h2.52c.1 1.05.56 2.03 1.27 2.8.7.78 1.66 1.28 2.71 1.41v2.5a6.5 6.5 0 01-3.23-.87v6.46a5.25 5.25 0 11-5.25-5.25h.25v2.5h-.25a2.75 2.75 0 102.75 2.75V2z"/>
+      </svg>
+    </a>
+        <!-- Facebook -->
+    <a href="#" target="_blank" aria-label="Facebook" class="hover:text-blue-800 transition">
+      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.84 7.94 9.8v-6.92h-2.4v-2.88h2.4V9.6c0-2.38 1.43-3.68 3.56-3.68 1.03 0 2.1.18 2.1.18v2.3h-1.18c-1.16 0-1.52.72-1.52 1.46v1.76h2.6l-.42 2.88h-2.18v6.92C18.56 20.84 22 16.84 22 12z"/>
+      </svg>
+    </a>
+        <!-- Instagram -->
+    <a href="#" target="_blank" aria-label="Instagram" class="hover:text-blue-800 transition">
+      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M7.75 2C5.68 2 4 3.68 4 5.75v12.5C4 20.32 5.68 22 7.75 22h8.5C18.32 22 20 20.32 20 18.25V5.75C20 3.68 18.32 2 16.25 2h-8.5zm0 2h8.5c.69 0 1.25.56 1.25 1.25v12.5c0 .69-.56 1.25-1.25 1.25h-8.5c-.69 0-1.25-.56-1.25-1.25V5.25C6.5 4.56 7.06 4 7.75 4zm4.25 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1 1 0 110 2 1 1 0 010-2z"/>
+      </svg>
+    </a>
+        <!-- Telegram -->
+    <a href="#" target="_blank" aria-label="Telegram" class="hover:text-blue-800 transition">
+      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M9.033 16.814l-.378 4.937c.543 0 .778-.233 1.06-.512l2.547-2.43 5.285 3.873c.97.537 1.665.254 1.925-.901l3.488-16.324c.309-1.43-.547-1.992-1.45-1.647L1.98 9.388c-1.417.558-1.395 1.362-.24 1.718l4.638 1.45 10.758-6.77c.507-.31.97-.138.59.173L9.033 16.814z"/>
+      </svg>
+    </a>
+        <!-- LinkedIn -->
+    <a href="#" target="_blank" aria-label="LinkedIn" class="hover:text-blue-800 transition">
+      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M4.98 3.5a2.5 2.5 0 11.01 5.001A2.5 2.5 0 014.98 3.5zM2 9h6v12H2zM9 9h5.5v1.8h.08a6.04 6.04 0 015.42-3c5.8 0 6.9 3.8 6.9 8.7V21h-6v-7c0-1.7-.03-3.9-2.5-3.9-2.5 0-2.9 1.9-2.9 3.8V21H9z"/>
+      </svg>
+    </a>
       </div>
     </div>
   </section>

@@ -16,6 +16,16 @@ export default {
           'app-showcase-light': '#EEF9F3', // light green background
         'page-bg': '#FFFFFF', 
       },
+      animation: {
+        'zoom-loop': 'zoomInOut 2s ease-in-out infinite',
+      },
+      keyframes: {
+        zoomInOut: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.1)' },
+        },
+      },
+
       listStyleType: {
         square: 'square',
       },
