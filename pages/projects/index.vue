@@ -30,17 +30,6 @@
               {{ tech }}
             </span>
           </div>
-
-          <div class="mt-4">
-            <a
-              :href="project.link"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-block text-blue-600 hover:underline font-semibold"
-            >
-              View Project →
-            </a>
-          </div>
         </div>
       </div>
     </div>
@@ -50,28 +39,25 @@
 <script setup>
 const projects = [
   {
-    title: 'Portfolio Website',
+    title: ' Web Application',
     description:
-      'A personal portfolio website built with Nuxt 3 and Tailwind CSS to showcase my skills and projects.',
+      'A full-featured website built to showcase modern web development skills, featuring a responsive and interactive design. Developed using Laravel with Blade templates for the frontend.',
     image: 'https://img.freepik.com/free-vector/illustrated-about-me-concept_52683-59123.jpg',
-    technologies: ['Nuxt 3', 'Tailwind CSS', 'Vue 3'],
-    link: 'https://github.com/your-github/portfolio',
+    technologies: ['Laravel', 'PHP', 'Blade', 'Tailwind CSS', 'Sass', 'Bootstrap', 'JavaScript'],
   },
   {
-    title: 'Simple Blog',
+    title: 'Development Manager Web System',
     description:
-      'A minimalistic blog platform with markdown support and SEO optimization.',
+      'A comprehensive web-based management system designed to streamline school and staff operations, including student records, staff management, class scheduling, and reporting. Built with a modern, intuitive UI for efficient daily use.',
     image: 'https://img.freepik.com/free-vector/illustrated-about-me-concept_52683-59123.jpg',
-    technologies: ['Nuxt 3', 'Markdown', 'SEO'],
-    link: 'https://github.com/your-github/simple-blog',
+    technologies: ['Node.js', 'Laravel', 'Vue 3', 'Nuxt 3'],
   },
   {
-    title: 'Task Manager App',
+    title: 'E-Commerce Web Application',
     description:
-      'A productivity app to help organize daily tasks with a clean UI and intuitive features.',
-    image: 'https://img.freepik.com/free-vector/illustrated-about-me-concept_52683-59123.jpg',
-    technologies: ['Vue 3', 'Pinia', 'Firebase'],
-    link: 'https://github.com/your-github/task-manager',
-  },
+      'A fully functional e-commerce website featuring product management, shopping cart, user authentication, and responsive design.',
+    image: 'https://img.freepik.com/free-vector/online-shopping-concept_23-2148889731.jpg',
+    technologies: ['Laravel', 'Nuxt 3', 'Bootstrap Vue', 'JavaScript'],
+  }
 ]
 </script>

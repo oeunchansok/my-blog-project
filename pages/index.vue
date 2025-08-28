@@ -1,6 +1,5 @@
 <template>
   <div class="bg-gray-50 text-gray-800 pt-10">
-
     <!-- Hero /  Banner -->
     <section
       class="text-white py-20 text-center bg-cover bg-center"
@@ -25,7 +24,7 @@
     <section class="py-16 bg-white">
       <div class="container mx-auto px-6 flex flex-col md:flex-row items-center md:space-x-10">
         <img :src="isme" alt="Akemi" 
-        class="w-48   object-cover shadow-md border border-blue-300 mb-6 md:mb-0"        />
+        class="w-48 rounded-lg  object-cover shadow-md border border-blue-300 mb-6 md:mb-0"        />
         <div>
           <h2 class="text-3xl font-bold mb-3 text-blue-600">About Me</h2>
           <p class="text-lg text-gray-700">
@@ -39,43 +38,54 @@
     <!-- Skills / What I Do -->
     <section class="py-16 bg-blue-50">
       <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-8 text-blue-600">What I Do</h2>
+        <h2 class="text-3xl font-bold mb-8 text-blue-600">Projects</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
             <h3 class="font-semibold text-xl mb-2">Web Development</h3>
-            <p class="text-gray-600">Building modern, responsive websites with Nuxt, Vue, and Tailwind.</p>
+            <p class="text-gray-600 line-clamp-2">
+              A full-featured website built to showcase modern web development skills, featuring a responsive and interactive design. Developed using Laravel with Blade templates for the frontend.
+            </p>
           </div>
           <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
-            <h3 class="font-semibold text-xl mb-2">UI/UX Design</h3>
-            <p class="text-gray-600">Designing user-friendly, clean interfaces for a great experience.</p>
+            <h3 class="font-semibold text-xl mb-2">Development Manager Web System</h3>
+            <p class="text-gray-600 line-clamp-2">
+              A comprehensive web-based management system designed to streamline school and staff operations, including student records, staff management, class scheduling, and reporting. Built with a modern, intuitive UI for efficient daily use.
+            </p>
           </div>
           <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
-            <h3 class="font-semibold text-xl mb-2">Content Writing</h3>
-            <p class="text-gray-600">Sharing coding tips, tutorials, and personal stories on my blog.</p>
+            <h3 class="font-semibold text-xl mb-2">E-Commerce Web Application</h3>
+            <p class="text-gray-600 line-clamp-2">
+              A fully functional e-commerce website featuring product management, shopping cart, user authentication, and responsive design.
+            </p>
           </div>
         </div>
+      </div>
+      <div class="text-center mt-6">
+        <NuxtLink to="/projects" class="text-blue-600 hover:underline font-semibold">See all projects →</NuxtLink>
       </div>
     </section>
 
     <!-- Projects -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-8 text-center text-blue-600">Featured Projects</h2>
+        <h2 class="text-3xl font-bold mb-8 text-center text-blue-600">What I Do</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-gray-100 rounded-lg p-6 shadow hover:shadow-lg transition">
-            <h3 class="font-semibold text-xl mb-2">My Portfolio Website</h3>
-            <p class="text-gray-600">A personal website built with Nuxt 3 and Tailwind CSS to showcase my work.</p>
+            <h3 class="font-semibold text-xl mb-2">Web Developrt</h3>
+            <p class="text-gray-600">
+              I build responsive and dynamic websites using modern technologies, ensuring clean code and seamless user experience.
+            </p>
           </div>
           <div class="bg-gray-100 rounded-lg p-6 shadow hover:shadow-lg transition">
-            <h3 class="font-semibold text-xl mb-2">Simple Blog</h3>
-            <p class="text-gray-600">A minimalist blog platform for sharing articles and tutorials.</p>
+            <h3 class="font-semibold text-xl mb-2">UI/UX Design</h3>
+            <p class="text-gray-600">
+              I design intuitive and user-friendly interfaces with a focus on usability and aesthetics, backed by practical experience in UX/UI.
+            </p>
           </div>
-        </div>
-        <div class="text-center mt-6">
-          <NuxtLink to="/projects" class="text-blue-600 hover:underline font-semibold">See all projects →</NuxtLink>
         </div>
       </div>
     </section>
+
     <!-- quotes -->
     <section class="py-16 bg-blue-50">
       <div class="container mx-auto px-6 text-center">

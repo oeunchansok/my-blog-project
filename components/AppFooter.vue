@@ -6,8 +6,7 @@
       <div>
         <h4 class="font-semibold text-gray-900 mb-2">AkemiSite</h4>
         <p class="text-sm">
-          Built with ❤️ using Nuxt 3 & Tailwind CSS.<br>
-          Sharing my journey, projects, and thoughts.
+          Built with ❤️ to share my journey, <br> showcase projects, and express ideas.  
         </p>
       </div>
 

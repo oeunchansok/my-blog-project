@@ -8,67 +8,40 @@
     <!-- Image Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       <div
-        v-for="(image, index) in images"
+        v-for="(image, index) in someMoment"
         :key="index"
         class="overflow-hidden rounded-lg shadow-lg cursor-pointer group relative"
       >
         <img
           :src="image.src"
-          :alt="image.alt"
           class="w-full h-64 object-cover transform transition-transform duration-300 group-hover:scale-105"
           loading="lazy"
         />
-        <div
-          class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-lg font-semibold"
-        >
-          {{ image.title }}
-        </div>
       </div>
     </div>
 
     <!-- View More -->
-    <div class="text-center mt-12">
+    <!-- <div class="text-center mt-12">
       <NuxtLink
         to="/gallery"
         class="inline-block px-6 py-3 border border-blue-600 text-blue-600 rounded hover:bg-blue-600 hover:text-white transition"
       >
         View Full Gallery
       </NuxtLink>
-    </div>
+    </div> -->
   </section>
 </template>
 
 <script setup>
-const images = [
-  {
-    src: 'https://img.freepik.com/free-vector/illustrated-about-me-concept_52683-59123.jpg',
-    alt: 'Lush green forest',
-    title: 'Lush Forest',
-  },
-  {
-    src: 'https://img.freepik.com/free-vector/illustrated-about-me-concept_52683-59123.jpg',
-    alt: 'Orange sunset sky',
-    title: 'Sunset Sky',
-  },
-  {
-    src: 'https://img.freepik.com/free-vector/illustrated-about-me-concept_52683-59123.jpg',
-    alt: 'Workspace with laptop and coffee',
-    title: 'My Workspace',
-  },
-  {
-    src: 'https://img.freepik.com/free-vector/illustrated-about-me-concept_52683-59123.jpg',
-    alt: 'Mountain peaks',
-    title: 'Mountain Peaks',
-  },
-  {
-    src: 'https://img.freepik.com/free-vector/illustrated-about-me-concept_52683-59123.jpg',
-    alt: 'Flowing river in forest',
-    title: 'Flowing River',
-  },
-  {
-    src: 'https://img.freepik.com/free-vector/illustrated-about-me-concept_52683-59123.jpg',
-    alt: 'Starry night sky',
-    title: 'Starry Night',
-  },
+const someMoment = [
+  { src : " /drawing.png"},
+  { src : " /family.png"},
+  { src : " /moon.png"},
+  { src : " /music.png"},
+  { src : " /rain.png"},
+  { src : " /silence.png"},
+  { src : " /sunrise.png"},
+  { src : " /walk.png"},
+  { src : " /write.png"},
 ]
 </script>

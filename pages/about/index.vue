@@ -23,7 +23,7 @@
             I enjoy coding, exploring nature, and sharing what I learn. This blog reflects my journey, my thoughts, and my creative side.
           </p>
           <p class="text-lg text-gray-700">
-            I value simplicity, kindness, and continuous growth 🌱.
+            I value simplicity, respect, kindness, and continuous growth 🌱.
           </p>
         </div>
       </div>
@@ -32,7 +32,7 @@
       <div class="bg-white rounded-2xl shadow-lg p-8">
         <h3 class="text-2xl font-semibold text-blue-600 mb-4">My Habits</h3>
         <ul class="list-disc list-inside text-gray-700 space-y-2 text-lg">
-          <li>Write in my journal every morning and night 📝</li>
+          <li>Write in my journal every night 📝</li>
           <li>Take quiet evening walks 🌙</li>
           <li>Read or watch something educational daily 📚</li>
         </ul>
@@ -44,6 +44,7 @@
         <ul class="list-disc list-inside text-gray-700 space-y-2 text-lg">
           <li>Write blog posts about coding and life 🧑‍💻</li>
           <li>Explore and take photos of nature and sunsets 🌅</li>
+          <li>Write and read poems to express my feelings 📝</li>
           <li>Listen to calming instrumental music 🎵🎶</li>
           <li>Watch inspiring movies or anime 📽️</li>
           <li>Draw the pictue ✏️ </li>
@@ -59,33 +60,100 @@
       </div>
 
       <!-- Picture Gallery -->
+
       <div class="bg-white rounded-2xl shadow-lg p-8">
+        <img :src="img" alt="">
         <h3 class="text-2xl font-semibold text-blue-600 mb-6">Some Moments I Love</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div
+          v-for="(image, index) in images"
+          :key="index"
+          class="overflow-hidden rounded-lg shadow-lg cursor-pointer group relative"
+        >
           <img
-            src="https://imgs.search.brave.com/C6eWMXY3QclLfV2TSJTB588usWmIHSMrse8kbP1uXKc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzE0MjExOTg4L3Iv/aWwvNjM3NmQ1LzE5/MDQzMTI2NTYvaWxf/NjAweDYwMC4xOTA0/MzEyNjU2X3JuYnEu/anBn"
-            alt="Nature"
-            class="rounded-xl shadow hover:scale-105 transition-transform duration-300 object-cover w-full h-48"
+            :src="image.src"
+            :alt="image.alt"
+            class="w-full h-64 object-cover transform transition-transform duration-300 group-hover:scale-105"
+            loading="lazy"
           />
-          <img
-            src="https://imgs.search.brave.com/C6eWMXY3QclLfV2TSJTB588usWmIHSMrse8kbP1uXKc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzE0MjExOTg4L3Iv/aWwvNjM3NmQ1LzE5/MDQzMTI2NTYvaWxf/NjAweDYwMC4xOTA0/MzEyNjU2X3JuYnEu/anBn"
-            alt="Sunset"
-            class="rounded-xl shadow hover:scale-105 transition-transform duration-300 object-cover w-full h-48"
-          />
-          <img
-            src="https://imgs.search.brave.com/C6eWMXY3QclLfV2TSJTB588usWmIHSMrse8kbP1uXKc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzE0MjExOTg4L3Iv/aWwvNjM3NmQ1LzE5/MDQzMTI2NTYvaWxf/NjAweDYwMC4xOTA0/MzEyNjU2X3JuYnEu/anBn"
-            alt="Coding Setup"
-            class="rounded-xl shadow hover:scale-105 transition-transform duration-300 object-cover w-full h-48"
-          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-lg font-semibold"
+          >
+            {{ image.title }}
+          </div>
         </div>
       </div>
+
+      </div>
+      <!-- <div class="bg-white rounded-2xl shadow-lg p-8">
+        <img :src="img" alt="">
+        <h3 class="text-2xl font-semibold text-blue-600 mb-6">Some Moments I Love</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div v-for="(imgs, index) in someMoment" :key="index">
+            <img
+              :src="imgs.img"
+              alt="Nature"
+              class="rounded-xl shadow hover:scale-105 transition-transform duration-300 object-cover w-full h-48"
+            />
+          </div>
+        </div>
+
+      </div> -->
 
     </div>
   </section>
 </template>
 
 <script setup>
-// No script needed for static content
+import { ref } from 'vue'
+const images = [
+  { 
+    src : " /drawing.png",
+    alt: 'Lush green forest',
+    title: 'Drawing and a Poem',
+  },
+  { 
+    src : " /family.png",
+    alt: 'Lush green forest',
+    title: 'eats with family',
+  },
+  {
+    src : " /moon.png",
+    alt: 'Lush green forest',
+    title: 'Moon and Stars',
+  },
+  {
+    src : " /music.png",
+    alt: 'Lush green forest',
+    title: 'Listening to Music',
+  },
+  {
+    src : " /rain.png",
+    alt: 'Lush green forest',
+    title: 'Rainy Days',
+  },
+  {
+    src : " /silence.png",
+    alt: 'Lush green forest',
+    title: 'Peace and Silence',
+  },
+  {
+    src : " /sunrise.png",
+    alt: 'Lush green forest',
+    title: 'Sunrise',
+  },
+  {
+    src : " /walk.png",
+    alt: 'Lush green forest',
+    title: 'Walking in Nature',
+  },
+  {
+    src : " /write.png",
+    alt: 'Lush green forest',
+    title: 'Writing and drinking ',
+  },
+]
+
 </script>
 
 <style scoped>
