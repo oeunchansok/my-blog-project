@@ -4,10 +4,12 @@
     <!-- Hero /  Banner -->
     <section
       class="text-white py-20 text-center bg-cover bg-center"
-      style="background-image: url('https://imgs.search.brave.com/KXxwwz7U3lW-JkGkaSHhZ9BqWCUepvpM1lYQpXvj3K8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA0LzcyLzE5LzM5/LzM2MF9GXzQ3MjE5/Mzk1NV9jbHF5SkZB/b0JSMWFKZXJwTUQ5/NmNlODRqaENjWFps/dS5qcGc');"
+      style="background-image: url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0zNzNiYXRjaDQtNDVfMS5qcGc.jpg');"
     >
       <div class="container mx-auto px-6  bg-opacity-50 p-6 rounded-lg">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Akemi’s Personal Website</h1>
+          <h1 class="neon-text text-4xl md:text-5xl font-bold mb-4">
+            Welcome to Akemi’s Personal Website
+          </h1>
         <p class="text-lg md:text-xl mb-6">Sharing my journey in web development, creativity, and life 🚀</p>
         <NuxtLink
           to="/quotes"
@@ -157,3 +159,34 @@
 <script setup>
   const isme = "/isMe.png";
 </script>
+<style>
+.neon-text {
+  color: #fff;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #0ff,
+    0 0 80px #0ff;
+  animation: neon-flow 2s ease-in-out infinite alternate;
+}
+
+@keyframes neon-flow {
+  0% {
+    text-shadow:
+      0 0 5px #0ff,
+      0 0 10px #0ff,
+      0 0 20px #0ff,
+      0 0 40px #0ff,
+      0 0 80px #0ff;
+  }
+  100% {
+    text-shadow:
+      0 0 10px #f0f,
+      0 0 20px #f0f,
+      0 0 40px #f0f,
+      0 0 80px #f0f,
+      0 0 160px #f0f;
+  }
+}
+</style>
