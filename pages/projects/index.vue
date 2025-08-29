@@ -42,21 +42,21 @@ const projects = [
     title: ' Web Application',
     description:
       'A full-featured website built to showcase modern web development skills, featuring a responsive and interactive design. Developed using Laravel with Blade templates for the frontend.',
-    image: 'https://img.freepik.com/free-vector/illustrated-about-me-concept_52683-59123.jpg',
+    image: '/web.png',
     technologies: ['Laravel', 'PHP', 'Blade', 'Tailwind CSS', 'Sass', 'Bootstrap', 'JavaScript'],
   },
   {
     title: 'Development Manager Web System',
     description:
       'A comprehensive web-based management system designed to streamline school and staff operations, including student records, staff management, class scheduling, and reporting. Built with a modern, intuitive UI for efficient daily use.',
-    image: 'https://img.freepik.com/free-vector/illustrated-about-me-concept_52683-59123.jpg',
+    image: '/system.png',
     technologies: ['Node.js', 'Laravel', 'Vue 3', 'Nuxt 3'],
   },
   {
     title: 'E-Commerce Web Application',
     description:
       'A fully functional e-commerce website featuring product management, shopping cart, user authentication, and responsive design.',
-    image: 'https://img.freepik.com/free-vector/online-shopping-concept_23-2148889731.jpg',
+    image: '/ecommer.png',
     technologies: ['Laravel', 'Nuxt 3', 'Bootstrap Vue', 'JavaScript'],
   }
 ]

@@ -72,18 +72,5 @@ const form = reactive({
   message: '',
 })
 
-const submitted = ref(false)
 
-function submitForm() {
-  // Simple validation can be enhanced or replaced with real API calls
-  if (!form.name || !form.email || !form.message) return alert('Please fill all fields.')
-
-  // Simulate form submission
-  submitted.value = true
-
-  // Reset form fields
-  form.name = ''
-  form.email = ''
-  form.message = ''
-}
 </script>

@@ -13,10 +13,15 @@
       <!-- Profile & Intro -->
       <div class="flex flex-col md:flex-row items-center md:items-start md:space-x-10 space-y-6 md:space-y-0 bg-white rounded-2xl shadow-lg p-8">
         <img
+          src="/public/gallery/working.png"
+          alt="akime Profile"
+          class="w-64 h-64 rounded-lg object-cover border-2 border-blue-300 shadow-md"
+        />
+        <!-- <img
           src="https://imgs.search.brave.com/C6eWMXY3QclLfV2TSJTB588usWmIHSMrse8kbP1uXKc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzE0MjExOTg4L3Iv/aWwvNjM3NmQ1LzE5/MDQzMTI2NTYvaWxf/NjAweDYwMC4xOTA0/MzEyNjU2X3JuYnEu/anBn"
           alt="akime Profile"
           class="w-64 h-64 rounded-full object-cover border-4 border-blue-300 shadow-md"
-        />
+        /> -->
         <div class="space-y-4">
           <p class="text-lg text-gray-700 leading-relaxed">
             Hi! I’m <span class="font-bold text-blue-600">Akime</span> — a web developer and tech lover from Cambodia 🇰🇭.
@@ -140,7 +145,7 @@ const images = [
   {
     src : " /sunrise.png",
     alt: 'Lush green forest',
-    title: 'Sunrise',
+    title: 'Sunset',
   },
   {
     src : " /walk.png",

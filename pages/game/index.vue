@@ -1,27 +1,16 @@
 <template>
-  <main
-    class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 bg-gradient-to-br from-green-100 to-blue-100"
-  >
-    <h1 class="text-3xl sm:text-4xl font-extrabold mb-2 drop-shadow mt-10">🐹 Whack-a-Mole</h1>
-    <p class="mb-4 text-gray-600 text-sm sm:text-base" v-if="!isRunning">
-      Click <strong>Start</strong> and whack the glowing hole!
-    </p>
-
-    <!-- Progress Bar -->
-    <div v-if="isRunning" class="w-full max-w-xl h-3 bg-gray-200 rounded-full mb-4 overflow-hidden">
-      <div
-        class="h-3 bg-yellow-500 transition-all duration-100 ease-linear"
-        :style="{ width: (timeLeft / duration * 100) + '%' }"
-      ></div>
-    </div>
+  <main class="min-h-screen flex flex-col items-center justify-center p-6 bg-gradient-to-br from-green-100 to-blue-100">
+    <!-- Title -->
+    <h1 class="text-3xl sm:text-4xl font-extrabold mb-2 drop-shadow text-center mt-10">🐹 Whack‑a‑Mole </h1>
+    <p class="mb-4 text-center" v-if="!isRunning">Click <strong>Start</strong> and whack the glowing mole!</p>
 
     <!-- Controls -->
-    <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-4 text-xs sm:text-sm">
+    <div class="flex flex-wrap justify-center items-center gap-4 mb-4">
       <button class="btn-start" :disabled="isRunning" @click="startGame">▶ Start</button>
       <button class="btn-stop" :disabled="!isRunning" @click="stopGame">⏹ Stop</button>
 
-      <label class="flex items-center gap-1 sm:gap-2">
-        Speed:
+      <label class="flex items-center gap-2 text-sm">
+        ⚡ Speed:
         <select v-model.number="spawnMs" class="select">
           <option :value="900">Slow</option>
           <option :value="650">Normal</option>
@@ -30,8 +19,8 @@
         </select>
       </label>
 
-      <label class="flex items-center gap-1 sm:gap-2">
-        Grid:
+      <label class="flex items-center gap-2 text-sm">
+        🔲 Grid:
         <select v-model.number="gridSize" class="select">
           <option :value="3">3×3</option>
           <option :value="4">4×4</option>
@@ -39,8 +28,8 @@
         </select>
       </label>
 
-      <label class="flex items-center gap-1 sm:gap-2">
-        Time:
+      <label class="flex items-center gap-2 text-sm">
+        ⏱ Time:
         <select v-model.number="duration" class="select">
           <option :value="30">30s</option>
           <option :value="45">45s</option>
@@ -49,17 +38,26 @@
       </label>
     </div>
 
-    <!-- Stats -->
-    <div class="mb-3 text-sm sm:text-lg flex flex-wrap justify-center gap-4">
-      <div><span class="font-semibold">Score:</span> <span class="score">{{ score }}</span></div>
-      <div><span class="font-semibold">Miss:</span> {{ misses }}</div>
-      <div><span class="font-semibold">Best:</span> {{ bestScore }}</div>
+    <!-- Progress Bar -->
+    <div v-if="isRunning" class="w-5/6 max-w-xl h-3 bg-gray-300 rounded-full overflow-hidden mb-4">
+      <div
+        class="h-3 bg-yellow-400 transition-all duration-100 ease-linear"
+        :style="{ width: (timeLeft / duration * 100) + '%' }"
+      ></div>
     </div>
 
-    <!-- Grid -->
+    <!-- Scoreboard -->
+    <div class="mb-3 text-lg flex flex-wrap justify-center gap-6">
+      <div class="flex items-center gap-1">🏆 Score: <span class="font-bold">{{ score }}</span></div>
+      <div class="flex items-center gap-1">❌ Miss: <span class="font-bold">{{ misses }}</span></div>
+      <div class="flex items-center gap-1">⏳ Time: <span class="font-bold">{{ timeLeft }}s</span></div>
+      <div class="flex items-center gap-1">⭐ Best: <span class="font-bold">{{ bestScore }}</span></div>
+    </div>
+
+    <!-- Game Grid -->
     <div
-      class="grid gap-2 sm:gap-3 w-full max-w-xl"
-      :style="{ gridTemplateColumns: `repeat(${gridSize}, minmax(50px, 1fr))` }"
+      class="grid gap-3 w-full max-w-xl"
+      :style="{ gridTemplateColumns: `repeat(${gridSize}, minmax(70px, 1fr))` }"
     >
       <button
         v-for="i in totalHoles"
@@ -68,22 +66,12 @@
         :class="{ active: activeIdx === i - 1, disabled: !isRunning }"
         @click="whack(i - 1)"
         :disabled="!isRunning"
-        aria-label="hole"
       >
         <span v-if="activeIdx === i - 1" class="mole">🐹</span>
       </button>
     </div>
 
-    <!-- Game Over Overlay -->
-    <div v-if="showOverlay" class="overlay">
-      <div class="overlay-box">
-        <h2 class="text-xl sm:text-2xl font-bold mb-3">🎉 Game Over 🎉</h2>
-        <p class="mb-2">Final Score: <span class="font-bold">{{ score }}</span></p>
-        <p class="mb-2">Misses: {{ misses }}</p>
-        <p class="mb-4">Best Score: {{ bestScore }}</p>
-        <button class="btn-start w-32 sm:w-40" @click="startGame">Play Again</button>
-      </div>
-    </div>
+    <p class="mt-5 text-sm text-gray-700 text-center">Tip: Increase grid size or speed for more challenge!</p>
   </main>
 </template>
 
@@ -94,10 +82,8 @@ const score = ref<number>(0)
 const misses = ref<number>(0)
 const bestScore = ref<number>(Number(globalThis.localStorage?.getItem('mole-best') || 0))
 const isRunning = ref<boolean>(false)
-const showOverlay = ref<boolean>(false)
-
 const gridSize = ref<number>(3)
-const totalHoles = computed<number>(() => gridSize.value * gridSize.value)
+const totalHoles = computed(() => gridSize.value * gridSize.value)
 const activeIdx = ref<number | null>(null)
 const spawnMs = ref<number>(650)
 const duration = ref<number>(30)
@@ -108,7 +94,13 @@ let countdownTimer: ReturnType<typeof setInterval> | null = null
 
 function randInt(max: number) { return Math.floor(Math.random() * max) }
 
-function nextMole() { if (!isRunning.value) return; activeIdx.value = randInt(totalHoles.value) }
+function nextMole() {
+  if (!isRunning.value) return
+  const prev = activeIdx.value
+  const next = randInt(totalHoles.value)
+  if (prev !== null && prev === activeIdx.value) { misses.value += 1 }
+  activeIdx.value = next
+}
 
 function whack(idx: number) {
   if (!isRunning.value) return
@@ -117,8 +109,8 @@ function whack(idx: number) {
 }
 
 function startGame() {
+  if (isRunning.value) return
   isRunning.value = true
-  showOverlay.value = false
   score.value = 0
   misses.value = 0
   timeLeft.value = duration.value
@@ -140,7 +132,6 @@ function stopGame() {
   spawnTimer = null
   countdownTimer = null
   activeIdx.value = null
-  showOverlay.value = true
   if (score.value > bestScore.value) {
     bestScore.value = score.value
     globalThis.localStorage?.setItem('mole-best', String(bestScore.value))
@@ -149,11 +140,19 @@ function stopGame() {
 
 onUnmounted(() => { if (spawnTimer) clearInterval(spawnTimer); if (countdownTimer) clearInterval(countdownTimer) })
 
+watch([spawnMs, gridSize], () => {
+  if (!isRunning.value) return
+  if (spawnTimer) clearInterval(spawnTimer)
+  spawnTimer = setInterval(nextMole, spawnMs.value)
+})
+
 watch(duration, (v) => { if (!isRunning.value) timeLeft.value = v })
 </script>
 
 <style scoped>
-/* Grid Holes */
+main { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
+
+/* Grid & Holes */
 .grid { margin: 0 auto; }
 .hole {
   width: 100%;
@@ -161,29 +160,35 @@ watch(duration, (v) => { if (!isRunning.value) timeLeft.value = v })
   border-radius: 9999px;
   border: 3px solid #11182720;
   background: radial-gradient(circle at 60% 40%, #374151 0%, #111827 70%);
+  box-shadow: inset 0 8px 18px #00000066, 0 2px 6px #00000022;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.15s ease;
+  transition: transform 80ms ease, box-shadow 120ms ease, background 150ms ease;
 }
 .hole.disabled { cursor: not-allowed; filter: grayscale(0.3) brightness(0.9); }
+.hole:hover { transform: translateY(-2px); }
 .hole.active {
-  background: radial-gradient(circle at 50% 45%, #9ca3af 0%, #4b5563 55%, #111827 100%);
-  box-shadow: 0 0 15px #f59e0b88, inset 0 12px 24px #00000066;
+  background: radial-gradient(circle at 50% 45%, #fcd34d 0%, #fbbf24 55%, #f59e0b 100%);
+  box-shadow: 0 0 0 3px #f59e0b inset, 0 10px 24px #f59e0b55, inset 0 12px 24px #00000066;
+  animation: pulse 800ms ease-in-out infinite alternate;
 }
-.mole { font-size: 1.5rem; animation: pop 0.2s ease; }
+.mole { font-size: 1.6rem; animation: pop 0.2s ease; }
 @keyframes pop { from { transform: scale(0.6); } to { transform: scale(1); } }
+@keyframes pulse { from { filter: drop-shadow(0 0 0 rgba(0,0,0,0.2)); } to { filter: drop-shadow(0 0 18px rgba(245,158,11,0.8)); } }
 
 /* Buttons */
-.btn-start { background: linear-gradient(135deg,#10b981,#059669); color:white; font-weight:bold; padding:.5rem 1rem; border-radius:.75rem; transition: transform 0.2s; }
+.btn-start {
+  padding: 0.5rem 1rem; border-radius: 0.75rem; border: none; font-weight: 600;
+  background: linear-gradient(135deg,#10b981,#059669); color:white; transition: transform 0.2s;
+}
 .btn-start:hover { transform: scale(1.05); }
-.btn-stop { background: linear-gradient(135deg,#ef4444,#dc2626); color:white; font-weight:bold; padding:.5rem 1rem; border-radius:.75rem; transition: transform 0.2s; }
+.btn-stop {
+  padding: 0.5rem 1rem; border-radius: 0.75rem; border: none; font-weight: 600;
+  background: linear-gradient(135deg,#ef4444,#dc2626); color:white; transition: transform 0.2s;
+}
 .btn-stop:hover { transform: scale(1.05); }
 
 /* Select */
-.select { border:1px solid #d1d5db; padding:0.25rem 0.5rem; border-radius:0.5rem; }
-
-/* Overlay */
-.overlay { position:absolute; inset:0; background:rgba(0,0,0,0.6); display:flex; justify-content:center; align-items:center; padding:1rem; }
-.overlay-box { background:white; padding:2rem; border-radius:1rem; text-align:center; box-shadow:0 8px 24px rgba(0,0,0,0.3); max-width:90%; }
+.select { border: 1px solid #e5e7eb; padding: 0.25rem 0.5rem; border-radius: 0.5rem; }
 </style>
